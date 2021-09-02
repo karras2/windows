@@ -45,9 +45,17 @@ h1 {
   font-size: 55px;
 }
 .tile {
-  background-color: #ffffff;
-  width: 100px;
-  height: 100px;
+  background: linear-gradient(90deg, #23bd15, #2ad91a);
+  width: 120px;
+  height: 120px;
   float: left;
-  margin-right: 10px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.part {
+  width: 512px;
+  float: left;
+  margin-right: 100px;
+  position: relative;
+  top: 40px;
 }

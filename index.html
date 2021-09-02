@@ -6,17 +6,23 @@
 <h1 style="font-weight:100;position:relative;left:100px">
   Start
 </h1>
-<div id="apps" style="position:relative;left:100px">
+<div id="apps" style="position:relative;left:100px;width:10000px;">
 </div>
 <script>
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 8; i++) {
     let part = document.createElement("div");
-    tile.classList.add("tile");
-    for (let i2 = 0; i2 < 4; i2++) {
+    for (let i2 = 0; i2 < 16; i2++) {
       let tile = document.createElement("div");
-      part.appendChild(tile);
       tile.classList.add("tile");
+      part.appendChild(tile);
+      let sizeChoose = Math.random();
+      switch(true) {
+        case sizeChoose > 0.5:
+          tile.style.width = "248px";
+          break;
+      };
     };
     apps.appendChild(part);
+    part.classList.add("part");
   };
 </script>
