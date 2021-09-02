@@ -80,7 +80,7 @@ window.onload = function() {
             part.appendChild(tile);
             let text = document.createElement("h3");
             let icon = document.createElement("img");
-            let iconFileName = "";
+            let iconFileName = "Questionmark";
             icon.classList.add("tileIcon");
             let color;
             switch (tileData[i][i2].data) {
@@ -95,6 +95,7 @@ window.onload = function() {
                     color = "#F5BA45";
                     break;
                 case 1:
+                    iconFileName = "MSStore";
                     text.innerHTML = "Store";
                     color = "#62ddbd";
                     break;
