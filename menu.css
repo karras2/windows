@@ -59,11 +59,11 @@ h3 {
   float: left;
   margin-right: 8px;
   margin-bottom: 8px;
-  transition: scale .15s ease-in-out;
+  transition: all .3s ease-out;
 }
 .tile:hover {
-  scale: 1.1;
-  mouse: pointer
+  scale: 0.98;
+  cursor: pointer;
 }
 .part {
   width: 512px;

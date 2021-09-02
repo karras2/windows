@@ -12,20 +12,33 @@
 <div id="apps" style="position:relative;left:100px;width:10000px;">
 </div>
 <script>
-  for (let i = 0; i < 8; i++) {
+  // 0: Desktop
+  let tileData = [
+    [{
+      data: 0,
+      size: 0,
+    }],
+  ];
+  for (let i = 0; i < tileData.length; i++) {
     let part = document.createElement("div");
-    for (let i2 = 0; i2 < 16; i2++) {
+    for (let i2 = 0; i2 < tileData[i].length; i2++) {
       let tile = document.createElement("div");
       tile.classList.add("tile");
       part.appendChild(tile);
-      let sizeChoose = Math.random();
-      /*switch(true) {
-        case sizeChoose > 0.5:
+      let text = document.createElement("h3");
+      switch (tileData[i][i2].data) {
+        case 0: 
+          text.innerHTML = "Desktop";
+          break;
+      };
+      switch(tileData[i][i2].size) {
+        case 0:
           tile.style.width = "248px";
           break;
-      };*/
-      let text = document.createElement("h3");
-      text.innerHTML = "Program";
+        case 1:
+          tile.style.width = "120px";
+          break;        
+      };
       tile.appendChild(text);
     };
     apps.appendChild(part);
