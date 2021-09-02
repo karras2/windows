@@ -1,6 +1,9 @@
 window.onload = function() {
 // 0: Desktop
 let apps = document.getElementById("apps");
+let config = {
+  systemColor: "#4B89DA"
+};
 let tileData = [
     [{
         data: 0,
@@ -41,6 +44,7 @@ let tileData = [
 function createModernMessage(message, buttons) {
   let bg = document.createElement("div");
   bg.classList.add("modernMessage");
+  bg.style.backgroundColor = config.systemColor;
   let messageH1 = document.createElement("h1");
   messageH1.innerHTML = message;
   messageH1.style.textAlign = "center";
@@ -49,14 +53,27 @@ function createModernMessage(message, buttons) {
   for (let i = 0; i < buttons.length; i++) {
     let button = document.createElement("button");
     button.innerHTML = buttons[i].text;
-    button.onclick = buttons[i].function;
+    button.onclick = function(){
+      if (buttons[i].function != undefined) setTimeout(buttons[i].function, 200);
+      bg.style.opacity = 0;
+      setTimeout(function(){bg.remove()}, 200);
+    };
     button.classList.add("modernButton");
     center.appendChild(button);
   }
   bg.appendChild(center);
   document.body.appendChild(bg);
 };
-createModernMessage("Message!!!!!!!!!! wow", [{text:"hi",function:()=>{alert("")}}]);
+createModernMessage("Do you like this simulator", 
+                    [{text:"Yes",
+                      function:()=>{
+                        createModernMessage("Thanks!", [{text:"Continue"}])
+                      }}, 
+                     {text:"No",
+                      function:()=>{
+                        createModernMessage("Thanks for trying it anyway!", [{text:"Continue"}])
+                      }, 
+                     }]);
 let tileAmount = 0;
 for (let i = 0; i < tileData.length; i++) {
     let part = document.createElement("div");
