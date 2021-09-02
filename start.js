@@ -8,12 +8,38 @@ let tileData = [
     },{
         data: 1,
         size: 1,
+    },{
+        data: 2,
+        size: 0,
+    },{
+        data: 2,
+        size: 0,
+    },{
+        data: 2,
+        size: 0,
+    },{
+        data: 2,
+        size: 0,
+    },{
+        data: 2,
+        size: 2,
+    },{
+        data: 2,
+        size: 1,
+    },{
+        data: 2,
+        size: 2,
+    },{
+        data: 2,
+        size: 1,
     },],
 ];
+let tileAmount = 0;
 for (let i = 0; i < tileData.length; i++) {
     let part = document.createElement("div");
     for (let i2 = 0; i2 < tileData[i].length; i2++) {
         let tile = document.createElement("div");
+        tile.id = "tile" + tileAmount++;
         tile.classList.add("tile");
         part.appendChild(tile);
         let text = document.createElement("h3");
@@ -22,14 +48,20 @@ for (let i = 0; i < tileData.length; i++) {
             case 0:
                 text.innerHTML = "Desktop";
                 tile.onclick = function() {
-                    alert("desktop")
-                    tile.style.
+                    for (let i3 = 0; i3 < tileAmount; i3++) {
+                        document.getElementById("tile"+i3).style.opacity = 0;
+                        document.getElementById("tile"+i3).style.scale = 0.75;
+                    };
                 };
                 color = "#F5BA45";
                 break;
             case 1: 
                 text.innerHTML = "Store";
                 color = "#62ddbd";
+                break;
+          case 2:
+                if (tileData[i][i2].size != 0) text.innerHTML = "Placeholder Tile";
+                color = "#A9B1BC";
                 break;
         };
         switch (tileData[i][i2].size) {
