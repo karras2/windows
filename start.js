@@ -70,6 +70,12 @@ window.onload = function() {
         bg.appendChild(center);
         document.body.appendChild(bg);
     };
+    function activateStart(a){
+        for (let i3 = 0; i3 < tileAmount; i3++) {
+            document.getElementById("tile" + i3).style.opacity = 0;
+            document.getElementById("tile" + i3).style.scale = a ? 1 : 0.75;
+        };
+    }
     let tileAmount = 0;
     for (let i = 0; i < tileData.length; i++) {
         let part = document.createElement("div");
@@ -91,12 +97,17 @@ window.onload = function() {
                             document.getElementById("tile" + i3).style.opacity = 0;
                             document.getElementById("tile" + i3).style.scale = 0.75;
                         };
+                        document.getElementById("start").style.opacity = 0;
+                        setTimeout(function(){
+                            document.getElementById("start").style.display = "none"
+                            document.getElementById("desktop").style.display = "block"
+                        }, 300)
                     };
                     color = "#F5BA45";
                     break;
                 case 1:
                     iconFileName = "MSStore";
-                    text.innerHTML = "Store";
+                    text.innerHTML = "Microsoft Store";
                     color = "#62ddbd";
                     break;
                 case 2:
