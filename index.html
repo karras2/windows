@@ -11,37 +11,4 @@
 </h1>
 <div id="apps" style="position:relative;left:100px;width:10000px;">
 </div>
-<script>
-  // 0: Desktop
-  let tileData = [
-    [{
-      data: 0,
-      size: 0,
-    }],
-  ];
-  for (let i = 0; i < tileData.length; i++) {
-    let part = document.createElement("div");
-    for (let i2 = 0; i2 < tileData[i].length; i2++) {
-      let tile = document.createElement("div");
-      tile.classList.add("tile");
-      part.appendChild(tile);
-      let text = document.createElement("h3");
-      switch (tileData[i][i2].data) {
-        case 0: 
-          text.innerHTML = "Desktop";
-          break;
-      };
-      switch(tileData[i][i2].size) {
-        case 0:
-          tile.style.width = "248px";
-          break;
-        case 1:
-          tile.style.width = "120px";
-          break;        
-      };
-      tile.appendChild(text);
-    };
-    apps.appendChild(part);
-    part.classList.add("part");
-  };
-</script>
+<script src="start.js"></script>
