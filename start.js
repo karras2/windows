@@ -17,14 +17,13 @@ for (let i = 0; i < tileData.length; i++) {
         tile.classList.add("tile");
         part.appendChild(tile);
         let text = document.createElement("h3");
-        tile.style.scale = 1;
-        tile.style.opacity = 1;
         let color;
         switch (tileData[i][i2].data) {
             case 0:
                 text.innerHTML = "Desktop";
                 tile.onclick = function() {
                     alert("desktop")
+                    tile.style.
                 };
                 color = "#F5BA45";
                 break;
