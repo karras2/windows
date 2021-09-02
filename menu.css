@@ -109,6 +109,7 @@ h4 {
   background-color: transparent;
   margin-right: 20px;
   margin-left: 20px;
+  transition: background-color .2s ease;
 }
 .modernButton:hover {
   background-color: rgba(255, 255, 255, 0.25); 
@@ -128,6 +129,15 @@ h4 {
   top: calc(100% - 40px);
   left: 0;
   background-color: black;
+}
+.taskbarIcon {
+  width: 50px;
+  height: 40px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.taskbarIconImage {
+  
 }
 @keyframes fadeIn {
   0% {opacity:0;scale:0.75}

@@ -70,9 +70,9 @@ window.onload = function() {
         bg.appendChild(center);
         document.body.appendChild(bg);
     };
-    function activateStart(a){
+    window.activateStart = function(a = false){
         for (let i3 = 0; i3 < tileAmount; i3++) {
-            document.getElementById("tile" + i3).style.opacity = 0;
+            document.getElementById("tile" + i3).style.opacity = a ? 1 : 0;
             document.getElementById("tile" + i3).style.scale = a ? 1 : 0.75;
         };
     }
@@ -93,10 +93,7 @@ window.onload = function() {
                 case 0:
                     text.innerHTML = "Desktop";
                     tile.onclick = function() {
-                        for (let i3 = 0; i3 < tileAmount; i3++) {
-                            document.getElementById("tile" + i3).style.opacity = 0;
-                            document.getElementById("tile" + i3).style.scale = 0.75;
-                        };
+                        activateStart(false);
                         document.getElementById("start").style.opacity = 0;
                         setTimeout(function(){
                             document.getElementById("start").style.display = "none"

@@ -6,9 +6,12 @@
 <body>
 <div id="desktop" style="display:none;">
   <div id="taskbar" class="taskbar">
-    <button onclick="document.getElementById('start').style.opacity = 1;document.getElementById('start').style.display = 'block';document.getElementById('desktop').style.display = 'none';">
+    <button id="startButton" style="position:relative;left:5px;top:5px;width:80px;height:30px;margin-left:0px;margin-right:0px;" class="modernButton">
       Start
     </button>
+    <div id="icons">
+      
+    </div>
   </div>
 </div>
 <div id="start" style="position:relative;left:100px;transition: all .2s ease;">
@@ -33,3 +36,4 @@
   </center>
 </div>-->
 <script src="start.js"></script>
+<script src="desktop.js"></script>
