@@ -33,7 +33,14 @@ let tileData = [
         data: 2,
         size: 1,
     },],
+    [{
+        data: 3,
+        size: 2,
+    }]
 ];
+function createModernMessage(message, buttons) {
+  
+};
 let tileAmount = 0;
 for (let i = 0; i < tileData.length; i++) {
     let part = document.createElement("div");
@@ -59,11 +66,16 @@ for (let i = 0; i < tileData.length; i++) {
                 text.innerHTML = "Store";
                 color = "#62ddbd";
                 break;
-          case 2:
-                if (tileData[i][i2].size != 0) text.innerHTML = "Placeholder Tile";
+            case 2:
+                text.innerHTML = "Placeholder Tile";
                 color = "#A9B1BC";
                 break;
+            case 3:
+                text.innerHTML = "Do you like this simulator";
+                color = "#4B89DA";
+                break;
         };
+        if (tileData[i][i2].size == 0) text.innerHTML = "";
         switch (tileData[i][i2].size) {
             case 0:
                 tile.style.width = "56px";
