@@ -44,3 +44,8 @@ body {
 h1 {
   font-size: 55px;
 }
+#tile {
+  background-color: #ffffff;
+  width: 100px;
+  height: 100px;
+}
