@@ -5,10 +5,12 @@ document.getElementById("startButton").onclick = function() {
   window.activateStart(true);
 }
 let taskbarIcons = document.getElementById('icons');
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 5; i++) {
   let icon = document.createElement("div");
   icon.classList.add("taskbarIcon");
   let iconImage = document.createElement("img");
   iconImage.src = "./icons/Questionmark32x32.png";
-  
+  icon.appendChild(iconImage);
+  iconImage.classList.add("taskbarIconImage");
+  taskbarIcons.appendChild(icon);
 };
