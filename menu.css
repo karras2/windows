@@ -42,7 +42,15 @@ body {
   color: #ffffff;
 }
 h1 {
-  font-size: 55px;
+  font-size: 30px;
+  font-weight: 100;
+}
+h3 {
+  font-size: 12px;
+  position: relative;
+  left: 10px;
+  top: calc(100% - 32px);
+  font-weight: 400;
 }
 .tile {
   background: linear-gradient(90deg, #23bd15, #2ad91a);
@@ -51,6 +59,11 @@ h1 {
   float: left;
   margin-right: 8px;
   margin-bottom: 8px;
+  transition: scale .15s ease-in-out;
+}
+.tile:hover {
+  scale: 1.1;
+  mouse: pointer
 }
 .part {
   width: 512px;

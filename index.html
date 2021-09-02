@@ -6,6 +6,9 @@
 <h1 style="font-weight:100;position:relative;left:100px">
   Start
 </h1>
+<h3 style="opacity:0.5;position:relative;left:100px">
+  This simulator is in beta!
+</h1>
 <div id="apps" style="position:relative;left:100px;width:10000px;">
 </div>
 <script>
@@ -16,11 +19,14 @@
       tile.classList.add("tile");
       part.appendChild(tile);
       let sizeChoose = Math.random();
-      switch(true) {
+      /*switch(true) {
         case sizeChoose > 0.5:
           tile.style.width = "248px";
           break;
-      };
+      };*/
+      let text = document.createElement("h3");
+      text.innerHTML = "Program";
+      tile.appendChild(text);
     };
     apps.appendChild(part);
     part.classList.add("part");
