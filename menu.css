@@ -81,6 +81,11 @@ h4 {
   scale: 0.98;
   cursor: pointer;
 }
+.tileIcon {
+  position:fixed;
+  top: calc(50% - 16px);
+  left: calc(50% - 16px);
+}
 .modernMessage {
   position: fixed;
   top: calc(50% - 150px);

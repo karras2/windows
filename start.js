@@ -79,6 +79,9 @@ window.onload = function() {
             tile.classList.add("tile");
             part.appendChild(tile);
             let text = document.createElement("h3");
+            let icon = document.createElement("img");
+            let iconFileName = "";
+            icon.classList.add("tileIcon");
             let color;
             switch (tileData[i][i2].data) {
                 case 0:
@@ -146,6 +149,8 @@ window.onload = function() {
             };
             tile.style.backgroundColor = color;
             tile.appendChild(text);
+            icon.src = "./icons/"+iconFileName+"32x32.png";
+            tile.appendChild(icon);
         };
         apps.appendChild(part);
         part.classList.add("part");
