@@ -107,6 +107,7 @@ window.onload = function() {
                     color = "#A9B1BC";
                     break;
                 case 3:
+                    iconFileName = "Windows";
                     text.innerHTML = "Do you like this simulator";
                     tile.onclick = function() {
                         createModernMessage("Do you like this simulator",
