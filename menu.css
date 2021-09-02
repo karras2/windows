@@ -44,8 +44,10 @@ body {
 h1 {
   font-size: 55px;
 }
-#tile {
+.tile {
   background-color: #ffffff;
   width: 100px;
   height: 100px;
+  float: left;
+  margin-right: 10px;
 }
