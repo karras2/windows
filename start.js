@@ -5,7 +5,10 @@ let tileData = [
     [{
         data: 0,
         size: 3,
-    }],
+    },{
+        data: 1,
+        size: 1,
+    },],
 ];
 for (let i = 0; i < tileData.length; i++) {
     let part = document.createElement("div");
@@ -16,12 +19,18 @@ for (let i = 0; i < tileData.length; i++) {
         let text = document.createElement("h3");
         tile.style.scale = 1;
         tile.style.opacity = 1;
+        let color;
         switch (tileData[i][i2].data) {
             case 0:
                 text.innerHTML = "Desktop";
                 tile.onclick = function() {
                     alert("desktop")
                 };
+                color = "#F5BA45";
+                break;
+            case 1: 
+                text.innerHTML = "Store";
+                color = "#62ddbd";
                 break;
         };
         switch (tileData[i][i2].size) {
@@ -40,6 +49,7 @@ for (let i = 0; i < tileData.length; i++) {
                 tile.style.height = "248px";
                 break;
         };
+        tile.style.backgroundColor = color;
         tile.appendChild(text);
     };
     apps.appendChild(part);
