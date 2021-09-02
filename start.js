@@ -39,8 +39,24 @@ let tileData = [
     }]
 ];
 function createModernMessage(message, buttons) {
-  
+  let bg = document.createElement("div");
+  bg.classList.add("modernMessage");
+  let messageH1 = document.createElement("h1");
+  messageH1.innerHTML = message;
+  messageH1.style.textAlign = "center";
+  bg.appendChild(messageH1);
+  let center = document.createElement("center");
+  for (let i = 0; i < buttons.length; i++) {
+    let button = document.createElement("button");
+    button.innerHTML = buttons[i].text;
+    button.onclick = buttons[i].function;
+    button.classList.add("modernButton");
+    center.appendChild(button);
+  }
+  bg.appendChild(center);
+  document.body.appendChild(bg);
 };
+createModernMessage("Message!!!!!!!!!! wow", [{text:"hi",function:()=>{alert("")}}]);
 let tileAmount = 0;
 for (let i = 0; i < tileData.length; i++) {
     let part = document.createElement("div");
