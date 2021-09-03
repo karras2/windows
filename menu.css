@@ -39,8 +39,20 @@ body {
   font-family: Segoe UI;
   font-weight: 400;
   background-color: #424953;
+  background: url("./wallpaper.png");
+  background-position: center;
+  background-attachment: fixed;
   color: #ffffff;
   user-select: none;
+}
+.blackTint {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: black;
+  opacity: 0.5;
+  left: 0;
+  top: 0;
 }
 h1 {
   font-size: 30px;
