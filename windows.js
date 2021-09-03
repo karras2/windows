@@ -1,8 +1,9 @@
 window.createNewWindow = function(options) {
+    let end;
     let windowElement = document.createElement("div");
     windowElement.classList.add("window");
-    windowElement.width = options.width + "px";
-    windowElement.height = options.height + "px";
+    windowElement.style.width = options.width + "px";
+    windowElement.style.height = options.height + "px";
     let title = document.createElement("h2");
     title.style.color = "#000000";
     title.style.width = (options.width - 40) + "px";
@@ -23,13 +24,38 @@ window.createNewWindow = function(options) {
     document.getElementById("desktop").appendChild(windowElement);
     let close = document.createElement("div");
     close.classList.add("windowClose");
+    let closeIcon = document.createElement("div");
+    closeIcon.classList.add("close");
+    close.onclick = function() {
+      windowElement.style.opacity=0;
+      windowElement.style.transform='scale(0.9)';
+      setTimeout(function(){windowElement.remove()},200);
+      if (title == )
+    };
+    close.onmouseover = function() {
+      closeIcon.style.backgroundColor = "#ffffff";
+    };
+    close.onmouseout = function() {
+      closeIcon.style.backgroundColor = "#000000";
+    };
     windowElement.appendChild(title);
     windowElement.appendChild(close);
     windowElement.appendChild(titlebarhitbox);
+    close.appendChild(closeIcon);
     /*       <div class="windowClose" onclick="templatewindow.style.opacity=0;templatewindow.style.transform='scale(0.9)';setTimeout(function(){templatewindow.remove()},200);">
           <div class="close">
           </div>
       </div>*/
     window.dragElement(windowElement, titlebarhitbox);
+    if (options.script) {
+      options.script(windowElement, title);
+    };
 }
-createNewWindow({width:400,height:200, title: "Windows"});
+createNewWindow({width:400,height:200, title: "Windows",
+                script: function(windowElement, title) {
+                  let interval = setInterval(function(){title.innerHTML = Math.random()}, 1000);
+                  function end() {
+                    clearInterval(interval);
+                  };
+                  return end;
+                }});
