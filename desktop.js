@@ -5,7 +5,8 @@ document.getElementById("startButton").onclick = function() {
   window.activateStart(true);
 }
 let taskbarIcons = document.getElementById('icons');
-for (let i = 0; i < 5; i++) {
+
+for (let i = 0; i < 1; i++) {
   let icon = document.createElement("div");
   icon.classList.add("taskbarIcon");
   let iconImage = document.createElement("img");
