@@ -143,7 +143,7 @@ h4 {
   background-color: black;
 }
 .taskbarIcon {
-  width: 50px;
+  width: 60px;
   height: 40px;
   float:left;
   left: 0;
@@ -152,6 +152,7 @@ h4 {
   margin-right: 5px;
   margin-left: 5px;
   cursor: pointer;
+  transition: all .2s;
 }
 .taskbarIcon:hover {
   background-color: rgba(255, 255, 255, 0.25); 
