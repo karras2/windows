@@ -184,7 +184,7 @@ h4 {
   background-color: #f76d82;
 }
 .window {
-  background-color: white;width:500px;height:300px;position:absolute;border-radius: 5px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);transition: opacity .2s, transform .2s;
+  background-color: white;position:absolute;border-radius: 5px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);transition: opacity .2s, transform .2s;
 }
 .close {
   clip-path: polygon(4.5% 0%, 0% 4.5%, 45.5% 50%, 0% 95.5%, 4.5% 100%, 50% 54.5%, 95.5% 100%, 100% 95.5%, 54.5% 50%, 100% 4.5%, 95.5% 0%, 50% 45.5%);

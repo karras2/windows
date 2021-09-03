@@ -1,6 +1,12 @@
 window.dragElement = function(elmnt, header) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  header.onmousedown = dragMouseDown;
+  if (header) {
+    /* if present, the header is where you move the DIV from:*/
+    header.onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
 
   function dragMouseDown(e) {
     e = e || window.event;
