@@ -1,3 +1,4 @@
-window.createNewWindow = function() {
-  
+window.createNewWindow = function(options) {
+    
+    dragElement(window, );
 }

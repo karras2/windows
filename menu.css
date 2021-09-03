@@ -187,13 +187,14 @@ h4 {
   background-color: white;width:500px;height:300px;position:absolute;border-radius: 5px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);transition: opacity .2s, transform .2s;
 }
 .close {
-  clip-path: polygon(5% 0, 0 4%, 43% 52%, 0 92%, 8% 100%, 51% 60%, 95% 100%, 100% 95%, 59% 52%, 100% 6%, 96% 0, 51% 44%);
+  clip-path: polygon(4.5% 0%, 0% 4.5%, 45.5% 50%, 0% 95.5%, 4.5% 100%, 50% 54.5%, 95.5% 100%, 100% 95.5%, 54.5% 50%, 100% 4.5%, 95.5% 0%, 50% 45.5%);
   background-color: black;
   width: 11px;
   height: 11px;
   position: absolute;
-  top: clip(50% - 5.5px);
-  left: clip(50% - 5.5px);
+  top: calc(16px - 5.5px);
+  left: calc(20px - 5.5px);
+  transition: background-color .2s;
 }
 @keyframes fadeIn {
   0% {opacity:0;transform:scale(0.75);}
