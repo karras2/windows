@@ -11,12 +11,7 @@ window.createNewWindow = function(options) {
     title.style.float = "left";
     title.innerHTML = options.title;
     let titlebarhitbox = document.createElement("div");
-    // position:absolute;top:0;left:0;width:calc(100% - 40px);height:32px;
-    /*       <div id="templatewindowheader" style="position:absolute;top:0;left:0;width:calc(100% - 40px);height:32px;">
-        
-      </div>*/
     titlebarhitbox.style.width = (options.width - 40) + "px";
-    console.log(titlebarhitbox.style.width, (options.width - 40));
     titlebarhitbox.style.height = "32px";
     titlebarhitbox.style.position = "absolute";
     titlebarhitbox.style.top = "0";
@@ -30,7 +25,7 @@ window.createNewWindow = function(options) {
       windowElement.style.opacity=0;
       windowElement.style.transform='scale(0.9)';
       setTimeout(function(){windowElement.remove()},200);
-      if (title == )
+      if (end) end();
     };
     close.onmouseover = function() {
       closeIcon.style.backgroundColor = "#ffffff";
@@ -38,24 +33,38 @@ window.createNewWindow = function(options) {
     close.onmouseout = function() {
       closeIcon.style.backgroundColor = "#000000";
     };
+    let content = document.createElement("div");
+    content.style.position = "absolute";
+    content.style.top = "32px";
+    content.style.left = "1px";
+    content.style.backgroundColor = "#f4f6f9";
+    content.style.width = (options.width - 2) + "px";
+    content.style.height = (options.height - 33) + "px";
+    content.style.borderBottomRightRadius = "5px";
+    content.style.borderBottomLeftRadius = "5px";
     windowElement.appendChild(title);
     windowElement.appendChild(close);
     windowElement.appendChild(titlebarhitbox);
+    windowElement.appendChild(content);
     close.appendChild(closeIcon);
-    /*       <div class="windowClose" onclick="templatewindow.style.opacity=0;templatewindow.style.transform='scale(0.9)';setTimeout(function(){templatewindow.remove()},200);">
-          <div class="close">
-          </div>
-      </div>*/
     window.dragElement(windowElement, titlebarhitbox);
     if (options.script) {
-      options.script(windowElement, title);
+      end = options.script(windowElement, title, content);
     };
 }
-createNewWindow({width:400,height:200, title: "Windows",
-                script: function(windowElement, title) {
-                  let interval = setInterval(function(){title.innerHTML = Math.random()}, 1000);
+createNewWindow({width:400,height:200, title: "Windows Experience Sample Program",
+                script: function(windowElement, title, content) {
+                  // form
+                  let input = document.createElement("input");
+                  content.appendChild(input);
+                  input.placeholder = "a input that.. does nothing";
+                  let h5 = document.createElement("h5");
+                  content.appendChild(h5);
+                  h5.innerHTML = "Click this button, and it will change the title";
+                  let button = document.createElement("button");
+                  button.innerHTML = "OK";
+                  content.appendChild(button);
                   function end() {
-                    clearInterval(interval);
                   };
                   return end;
                 }});
