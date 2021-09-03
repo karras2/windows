@@ -8,64 +8,83 @@ window.onload = function() {
         systemColor: "#4B89DA"
     };
     let tileData = [
-        [{
-            data: 0,
-            size: 3,
-        }, {
-            data: 1,
-            size: 1,
-        }, {
-            data: 2,
-            size: 0,
-        }, {
-            data: 2,
-            size: 0,
-        }, {
-            data: 2,
-            size: 0,
-        }, {
-            data: 2,
-            size: 0,
-        }, {
-            data: 2,
-            size: 2,
-        }, {
-            data: 2,
-            size: 1,
-        }, {
-            data: 2,
-            size: 2,
-        }, {
-            data: 2,
-            size: 1,
-        }, ],
-        [{
-            data: 3,
-            size: 2,
-        }, {
-            data: 2,
-            size: 1,
-        }, {
-            data: 2,
-            size: 0,
-        }, {
-            data: 2,
-            size: 0,
-        }, {
-            data: 2,
-            size: 0,
-        }, {
-            data: 2,
-            size: 0,
-        }, {
-            data: 2,
-            size: 1,
-        }, {
-            data: 2,
-            size: 2,
-        }]
-    ];
-
+    [
+        {
+            "data": "windows.desktop",
+            "size": 3
+        },
+        {
+            "data": "windows.store",
+            "size": 1
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 0
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 0
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 0
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 0
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 2
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 1
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 2
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 1
+        }
+    ],
+    [
+        {
+            "data": 3,
+            "size": 2
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 1
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 0
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 0
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 0
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 0
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 1
+        },
+        {
+            "data": "windows.placeholder",
+            "size": 2
+        }
+    ]
+]
     function createModernMessage(message, buttons) {
         let bg = document.createElement("div");
         bg.classList.add("modernMessage");
@@ -109,7 +128,7 @@ window.onload = function() {
             icon.classList.add("tileIcon");
             let color;
             switch (tileData[i][i2].data) {
-                case 0:
+                case "windows.desktop":
                     text.innerHTML = "Desktop";
                     tile.onclick = function() {
                         window.activateStart(false);
@@ -124,7 +143,7 @@ window.onload = function() {
                     };
                     color = "#F5BA45";
                     break;
-                case 1:
+                case "windows.":
                     iconFileName = "MSStore";
                     text.innerHTML = "Microsoft Store";
                     color = "#62ddbd";
