@@ -166,8 +166,8 @@ window.onload = function() {
                     break;
             };
             tile.style.backgroundColor = color;
-            tile.appendChild(text);
             tile.appendChild(icon);
+            tile.appendChild(text);
             icon.src = "./icons/"+iconFileName+"32x32.png";
         };
         apps.appendChild(part);
