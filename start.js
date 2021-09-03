@@ -23,6 +23,10 @@ window.onload = function() {
             "size": 1
         },
         {
+            "data": "andrew.notepad",
+            "size": 2
+        },
+        {
             "data": "winquacks.codeEditor",
             "size": 1
         },

@@ -60,20 +60,3 @@ window.createNewWindow = function(options) {
       end = options.script(windowElement, title, content, exit);
     };
 }
-createNewWindow({width:400,height:200, title: "Windows Experience Sample Program",
-                script: function(windowElement, title, content, exit) {
-                  // form
-                  let input = document.createElement("input");
-                  content.appendChild(input);
-                  input.placeholder = "a input that.. does nothing";
-                  let h5 = document.createElement("h5");
-                  content.appendChild(h5);
-                  h5.innerHTML = "Click this button, and it will change the title";
-                  let button = document.createElement("button");
-                  button.innerHTML = "OK";
-                  content.appendChild(button);
-                  button.onclick = function() { title.innerHTML = "Boom"; createNewWindow({width:300,height:32, title: "Oh wow look it changed"}) };
-                  function end() {
-                  };
-                  return end;
-                }});

@@ -19,6 +19,33 @@ window.programs = {
         },
         themeColor: "#F5BA45",
     },
+    "andrew.notepad": {
+        icon: "Andrewnotepad",
+        name: "Andrew Notepad",
+        code: function() {
+            if (window.state == 0) goToDesktop();
+            createNewWindow({width:600,height:400, title: "Tiny notepad",
+                script: function(windowElement, title, content) {
+                  let write = document.createElement("textarea");
+                       content.appendChild(write);
+                       write.style.width = "569px";
+                       write.style.height = "314px";
+                       write.spellcheck = true
+                  write.placeholder = "Write...";
+                  let h5 = document.createElement("h5");
+                  content.appendChild(h5);
+                  h5.innerHTML = "Click save to save";
+                  let button = document.createElement("button");
+                  button.innerHTML = "Save";
+                  content.appendChild(button);
+                  button.onclick = function() { title.innerHTML = "Text Document - saved"; createNewWindow({width:400,height:256, title: "Your text document has been saved!", script: function(windowElement, title, content, exit) { let writeImpression = document.createElement("textarea"); content.appendChild(writeImpression); writeImpression.style.width = "360px"; writeImpression.style.height = "96px"; writeImpression.spellcheck = true; writeImpression.placeholder = "Write your impression here if you want!";  let button = document.createElement("button"); button.innerHTML = "Close"; content.appendChild(button); button.onclick = function() { exit() };}})};
+                  function end() {
+                  };
+                  return end;
+                }});
+        },
+        themeColor: "#2289c9",
+    },
     "windows.store": {
         icon: "MSStore",
         name: "Microsoft Store",
@@ -116,8 +143,5 @@ window.programs = {
             });
         },
         themeColor: "#46CEAD",
-    },
-    "andrew.notepad": {
-      icon
     }
 }

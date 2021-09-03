@@ -6,12 +6,16 @@ document.getElementById("startButton").onclick = function() {
   window.state = 0;
 }
 let taskbarIcons = document.getElementById('icons');
-let taskbarData = ["windows.store"];
-for (let i = 0; i < 1; i++) {
+let taskbarData = ["windows.store", "winquacks.codeEditor", "andrew.notepad", "windows.calculator"];
+for (let i = 0; i < taskbarData.length; i++) {
   let icon = document.createElement("div");
   icon.classList.add("taskbarIcon");
   let iconImage = document.createElement("img");
-  iconImage.src = "./icons/Questionmark32x32.png";
+  iconImage.src = "./icons/"+window.programs[taskbarData[i]].icon+"32x32.png";
+  icon.onclick = window.programs[taskbarData[i]].code;
+  /*            let color = window.programs[tileData[i][i2].data].themeColor;
+            text.innerHTML = window.programs[tileData[i][i2].data].name;
+            tile.onclick = window.programs[tileData[i][i2].data].code;*/
   icon.appendChild(iconImage);
   iconImage.classList.add("taskbarIconImage");
   taskbarIcons.appendChild(icon);
