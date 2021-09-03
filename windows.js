@@ -1,4 +1,7 @@
+let windowPos = 0;
 window.createNewWindow = function(options) {
+    windowPos++;
+    if (windowPos == 8) windowPos = 0;
     let end;
     let windowElement = document.createElement("div");
     windowElement.classList.add("window");
@@ -9,6 +12,8 @@ window.createNewWindow = function(options) {
     title.style.width = (options.width - 40) + "px";
     title.style.height = "32px";
     title.style.float = "left";
+    windowElement.style.left = (100 + 32 * windowPos) + "px";
+    windowElement.style.top = (200 + 32 * windowPos) + "px";
     title.innerHTML = options.title;
     let titlebarhitbox = document.createElement("div");
     titlebarhitbox.style.width = (options.width - 40) + "px";
@@ -64,6 +69,7 @@ createNewWindow({width:400,height:200, title: "Windows Experience Sample Program
                   let button = document.createElement("button");
                   button.innerHTML = "OK";
                   content.appendChild(button);
+                  button.onclick = function() { title.innerHTML = "Boom"; createNewWindow({width:300,height:32, title: "Oh wow look it changed"}) };
                   function end() {
                   };
                   return end;

@@ -190,6 +190,7 @@ h4 {
 }
 .window {
   background-color: white;width:500px;height:300px;position:absolute;border-radius: 5px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);transition: opacity .2s, transform .2s;
+  animation: windowFadeIn .1s;
 }
 .close {
   clip-path: polygon(5% 0%, 0% 5%, 45% 50%, 0% 95%, 5% 100%, 50% 55%, 95% 100%, 100% 95%, 55% 50%, 100% 5%, 95% 0%, 50% 45%);
@@ -211,8 +212,28 @@ h4 {
   border-bottom-right-radius:5px;
   border-bottom-left-radius:5px;
 }
+input {
+  background-color: #ffffff;
+  outline: none;
+  border: 1px solid #999999;
+  border-radius: 0px;
+  font-family: Segoe UI;
+  font-weight: 400;
+  width: 200px;
+  height: 20px;
+}
+input:active {
+  border: 1px solid #4B89DA;
+}
+button {
+  
+}
 @keyframes fadeIn {
   0% {opacity:0;transform:scale(0.75);}
+  100% {opacity:1;}
+}
+@keyframes windowFadeIn {
+  0% {opacity:0;transform:scale(0.9);}
   100% {opacity:1;}
 }
 @keyframes fadeInNoScale {
