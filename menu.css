@@ -139,11 +139,9 @@ h4 {
 .startButtonIcon {
   clip-path: polygon(-3% -1%, 45% 0, 45% 45%, 0 45%, -3% 103%, 0 55%, 45% 55%, 45% 100%, 1% 106%, 92% 109%, 55% 100%, 55% 55%, 100% 55%, 103% 105%, -9% 106%, -3% 7%, 0 0, 55% 0, 55% 45%, 100% 45%, 101% -1%);
   background-color: white;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 30px;
-  height: 30px;
+  position:relative;
+  top: calc(50% - 16px);
+  left: calc(50% - 16px);
 };
 .modernButton {
   top: 140px;
