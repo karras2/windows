@@ -1,5 +1,10 @@
 let windowPos = 0;
 window.createNewWindow = function(options) {
+    function exit() {
+      windowElement.style.opacity=0;
+      windowElement.style.transform='scale(0.9)';
+      setTimeout(function(){windowElement.remove()},200);
+    }
     windowPos++;
     if (windowPos == 8) windowPos = 0;
     let end;
@@ -27,9 +32,7 @@ window.createNewWindow = function(options) {
     let closeIcon = document.createElement("div");
     closeIcon.classList.add("close");
     close.onclick = function() {
-      windowElement.style.opacity=0;
-      windowElement.style.transform='scale(0.9)';
-      setTimeout(function(){windowElement.remove()},200);
+      exit();
       if (end) end();
     };
     close.onmouseover = function() {
@@ -54,11 +57,11 @@ window.createNewWindow = function(options) {
     close.appendChild(closeIcon);
     window.dragElement(windowElement, titlebarhitbox);
     if (options.script) {
-      end = options.script(windowElement, title, content);
+      end = options.script(windowElement, title, content, exit);
     };
 }
 createNewWindow({width:400,height:200, title: "Windows Experience Sample Program",
-                script: function(windowElement, title, content) {
+                script: function(windowElement, title, content, exit) {
                   // form
                   let input = document.createElement("input");
                   content.appendChild(input);

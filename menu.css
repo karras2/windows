@@ -42,7 +42,7 @@ body {
   font-family: Segoe UI;
   font-weight: 400;
   background-color: #424953;
-  background: url("./wallpaper.png");
+  background-image: url("./wallpaper.png");
   background-position: center;
   background-attachment: fixed;
   color: #ffffff;
@@ -242,6 +242,7 @@ button {
   transition: background-color .2s;
   left: 10px;
   position: relative;
+  margin-right: 10px;
 }
 button:hover {
   background-color: #d4e6ff;
