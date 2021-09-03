@@ -36,9 +36,9 @@
     src: local("Segoe UI Bold Italic");
 }
 html {
-  overflow-x: scroll;
 }
 body {
+  overflow: hidden;
   font-family: Segoe UI;
   font-weight: 400;
   background-color: #424953;

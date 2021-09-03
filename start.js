@@ -42,6 +42,27 @@ window.onload = function() {
         [{
             data: 3,
             size: 2,
+        }, {
+            data: 2,
+            size: 1,
+        }, {
+            data: 2,
+            size: 0,
+        }, {
+            data: 2,
+            size: 0,
+        }, {
+            data: 2,
+            size: 0,
+        }, {
+            data: 2,
+            size: 0,
+        }, {
+            data: 2,
+            size: 1,
+        }, {
+            data: 2,
+            size: 2,
         }]
     ];
 
