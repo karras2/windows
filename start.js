@@ -75,6 +75,14 @@ window.onload = function() {
             document.getElementById("tile" + i3).style.opacity = a ? 1 : 0;
             document.getElementById("tile" + i3).style.scale = a ? 1 : 0.75;
         };
+        if (a == false) {
+          setTimeout(function(){
+            for (let i3 = 0; i3 < tileAmount; i3++) {
+              document.getElementById("tile" + i3).classList.remove("tile");
+              document.getElementById("tile" + i3).classList.add("tile");
+            };
+          }, 200)
+        }
     }
     let tileAmount = 0;
     for (let i = 0; i < tileData.length; i++) {
@@ -93,11 +101,11 @@ window.onload = function() {
                 case 0:
                     text.innerHTML = "Desktop";
                     tile.onclick = function() {
-                        activateStart(false);
+                        window.activateStart(false);
                         document.getElementById("start").style.opacity = 0;
                         setTimeout(function(){
-                            document.getElementById("start").style.display = "none"
-                            document.getElementById("desktop").style.display = "block"
+                            document.getElementById("start").style.display = "none";
+                            document.getElementById("desktop").style.display = "block";
                         }, 300)
                     };
                     color = "#F5BA45";

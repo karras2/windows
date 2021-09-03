@@ -74,11 +74,11 @@ h4 {
   border-radius: 5px;
 }
 .tile:hover {
-  scale: 1.02;
+  transform: scale(1.02);
   cursor: pointer;
 }
 .tile:active {
-  scale: 0.98;
+  transform: scale(0.98);
   cursor: pointer;
 }
 .tileIcon {
