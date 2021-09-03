@@ -1,0 +1,3 @@
+window.createNewWindow = function() {
+  
+}
