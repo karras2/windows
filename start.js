@@ -73,7 +73,7 @@ window.onload = function() {
     window.activateStart = function(a = false){
         for (let i3 = 0; i3 < tileAmount; i3++) {
             document.getElementById("tile" + i3).style.opacity = a ? 1 : 0;
-            document.getElementById("tile" + i3).style.scale = a ? 1 : 0.75;
+            document.getElementById("tile" + i3).style.transform = "scale(" +  (a ? 1 : 0.75) + ")";
         };
         if (a == false) {
           setTimeout(function(){
