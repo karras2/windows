@@ -75,6 +75,9 @@ h5 {
   font-size: 12px;
   font-weight: 400;
   color: black;
+  margin: 0;
+  position: relative;
+  left: 10px;
 }
 h3 {
   font-size: 12px;
@@ -219,14 +222,29 @@ input {
   border-radius: 0px;
   font-family: Segoe UI;
   font-weight: 400;
+  font-size: 12px;
   width: 200px;
   height: 20px;
+  left: 10px;
+  position: relative;
 }
 input:active {
   border: 1px solid #4B89DA;
 }
 button {
-  
+  width: 100px;
+  height: 25px;
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 12px;
+  border: 1px solid #646C77;
+  background-color: #ffffff;
+  transition: background-color .2s;
+  left: 10px;
+  position: relative;
+}
+button:hover {
+  background-color: #d4e6ff;
 }
 @keyframes fadeIn {
   0% {opacity:0;transform:scale(0.75);}
