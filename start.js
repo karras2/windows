@@ -17,72 +17,6 @@ window.onload = function() {
             "data": "windows.store",
             "size": 1
         },
-        {
-            "data": "windows.placeholder",
-            "size": 0
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 0
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 0
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 0
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 2
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 1
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 2
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 1
-        }
-    ],
-    [
-        {
-            "data": "windows.poll",
-            "size": 2
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 1
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 0
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 0
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 0
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 0
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 1
-        },
-        {
-            "data": "windows.placeholder",
-            "size": 2
-        }
     ]
 ]
     function createModernMessage(message, buttons) {
@@ -124,10 +58,12 @@ window.onload = function() {
             part.appendChild(tile);
             let text = document.createElement("h3");
             let icon = document.createElement("img");
-            let iconFileName = "Questionmark";
+            let iconFileName = window.programs[tileData[i][i2].data].icon || "Questionmark";
             icon.classList.add("tileIcon");
-            let color;
-            switch (tileData[i][i2].data) {
+            let color = window.programs[tileData[i][i2].data].themeColor;
+            text.innerHTML = window.programs[tileData[i][i2].data].name;
+            tile.onclick = window.programs[tileData[i][i2].data].code;
+            /*switch (tileData[i][i2].data) {
                 case "windows.desktop":
                     text.innerHTML = "Desktop";
                     tile.onclick = function() {
@@ -180,7 +116,7 @@ window.onload = function() {
                     };
                     color = "#4B89DA";
                     break;
-            };
+            };*/
             if (tileData[i][i2].size == 0) text.innerHTML = "";
             switch (tileData[i][i2].size) {
                 case 0:
