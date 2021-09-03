@@ -52,7 +52,7 @@ window.onload = function() {
     ],
     [
         {
-            "data": 3,
+            "data": "windows.poll",
             "size": 2
         },
         {
@@ -110,7 +110,7 @@ window.onload = function() {
         bg.appendChild(center);
         document.body.appendChild(bg);
     };
-    let partCount = 0;
+    window.partCount = 0;
     function createStartMenu() {
         partCount = 0;
         tileAmount = 0;
@@ -139,23 +139,23 @@ window.onload = function() {
                             for (let i3 = 0; i3 < partCount; i3++) {
                                 document.getElementById("part" + i3).remove();
                             };
-                        }, 300)
+                        }, 300);
                     };
                     color = "#F5BA45";
                     break;
-                case "windows.":
+                case "windows.store":
                     iconFileName = "MSStore";
                     text.innerHTML = "Microsoft Store";
                     color = "#62ddbd";
                     break;
-                case 2:
+                case "windows.placeholder":
                     text.innerHTML = "Placeholder Tile";
                     tile.onclick = function(){
                       createModernMessage("This is a useless tile to make the start menu look better", [{text: "OK"}])
                     }
                     color = "#A9B1BC";
                     break;
-                case 3:
+                case "windows.poll":
                     iconFileName = "Windows";
                     text.innerHTML = "Do you like this simulator";
                     tile.onclick = function() {
