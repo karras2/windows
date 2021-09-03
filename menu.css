@@ -35,6 +35,9 @@
     font-weight: 700;
     src: local("Segoe UI Bold Italic");
 }
+html {
+  overflow-x: scroll;
+}
 body {
   font-family: Segoe UI;
   font-weight: 400;
