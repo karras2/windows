@@ -80,12 +80,50 @@ window.programs = {
             if (window.state == 0) goToDesktop();
             createNewWindow({
                 width: 300,
-                height: 100,
+                height: 200,
                 title: "Load .exes file",
                 script: function(windowElement, title, content, exit) {
                     let h5 = document.createElement("h5");
                     content.appendChild(h5);
                     h5.innerHTML = "Load .exes file";
+                    let input = document.createElement("input");
+                    input.type = "file";
+                    input.style.border = "none";
+                    input.style.backgroundColor = "transparent";
+                    input.style.color = "black";
+                    input.addEventListener('change', function() {
+                    
+                      var fr=new FileReader();
+                      fr.onload=function(){
+                                      createNewWindow({
+                width: 300,
+                height: 120,
+                title: "Warning",
+                script: function(windowElement, title, content, exit) {
+                    let h5 = document.createElement("h5");
+                    content.appendChild(h5);
+                    h5.innerHTML = "Please run files you trust, .exes files have access to do everything";
+                    let button = document.createElement("button");
+                    button.innerHTML = "OK";
+                    content.appendChild(button);
+                    button.style.top = "20px";
+                    button.onclick = function() {
+                        let data;
+                        eval(fr.result);
+                        data.data()
+                        exit()
+                    };
+
+                    function end() {};
+                    return end;
+                }
+            });
+                          
+                      };
+              
+                      fr.readAsText(this.files[0]);
+                    })
+                    content.appendChild(input);
                     let button = document.createElement("button");
                     button.innerHTML = "OK";
                     content.appendChild(button);
