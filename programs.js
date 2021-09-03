@@ -73,6 +73,33 @@ window.programs = {
             });
         },
     },
+    "exesloader": {
+        icon: "Questionmark",
+        name: "Exes File Loader",
+        code: function() {
+            if (window.state == 0) goToDesktop();
+            createNewWindow({
+                width: 300,
+                height: 100,
+                title: "Load .exes file",
+                script: function(windowElement, title, content, exit) {
+                    let h5 = document.createElement("h5");
+                    content.appendChild(h5);
+                    h5.innerHTML = "Load .exes file";
+                    let button = document.createElement("button");
+                    button.innerHTML = "OK";
+                    content.appendChild(button);
+                    button.style.top = "20px";
+                    button.onclick = function() {
+                        exit()
+                    };
+
+                    function end() {};
+                    return end;
+                }
+            });
+        },
+    },
     "windows.calculator": {
         icon: "Calculator",
         name: "Calculator",

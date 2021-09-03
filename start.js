@@ -30,6 +30,10 @@ window.onload = function() {
             "data": "winquacks.codeEditor",
             "size": 1
         },
+        {
+            "data": "exesloader",
+            "size": 2,
+        }
     ]
 ]
     function createModernMessage(message, buttons) {
