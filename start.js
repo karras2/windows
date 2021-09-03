@@ -70,23 +70,13 @@ window.onload = function() {
         bg.appendChild(center);
         document.body.appendChild(bg);
     };
-    window.activateStart = function(a = false){
-        for (let i3 = 0; i3 < tileAmount; i3++) {
-            document.getElementById("tile" + i3).style.opacity = a ? 1 : 0;
-            document.getElementById("tile" + i3).style.transform = "scale(" +  (a ? 1 : 0.75) + ")";
-        };
-        if (a == false) {
-          setTimeout(function(){
-            for (let i3 = 0; i3 < tileAmount; i3++) {
-              document.getElementById("tile" + i3).classList.remove("tile");
-              document.getElementById("tile" + i3).classList.add("tile");
-            };
-          }, 200)
-        }
-    }
-    let tileAmount = 0;
-    for (let i = 0; i < tileData.length; i++) {
+    let partCount = 0;
+    function createStartMenu() {
+        partCount = 0;
+        tileAmount = 0;
+        for (let i = 0; i < tileData.length; i++) {
         let part = document.createElement("div");
+        part.id = "part" + partCount++;
         for (let i2 = 0; i2 < tileData[i].length; i2++) {
             let tile = document.createElement("div");
             tile.id = "tile" + tileAmount++;
@@ -106,6 +96,9 @@ window.onload = function() {
                         setTimeout(function(){
                             document.getElementById("start").style.display = "none";
                             document.getElementById("desktop").style.display = "block";
+                            for (let i3 = 0; i3 < partCount; i3++) {
+                                document.getElementById("part" + i3).remove();
+                            };
                         }, 300)
                     };
                     color = "#F5BA45";
@@ -173,4 +166,24 @@ window.onload = function() {
         apps.appendChild(part);
         part.classList.add("part");
     };
+    };
+    window.activateStart = function(a = false){
+        if (a == false) {
+          for (let i3 = 0; i3 < tileAmount; i3++) {
+              document.getElementById("tile" + i3).style.opacity = a ? 1 : 0;
+              document.getElementById("tile" + i3).style.transform = "scale(" +  (a ? 1 : 0.75) + ")";
+          };
+          setTimeout(function(){
+            for (let i3 = 0; i3 < tileAmount; i3++) {
+              document.getElementById("tile" + i3).classList.remove("tile");
+              document.getElementById("tile" + i3).classList.add("tile");
+            };
+          }, 200)
+        };
+        if (a == true) {
+            createStartMenu();
+        }
+    }
+    let tileAmount = 0;
+    createStartMenu();
 }
