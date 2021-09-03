@@ -24,25 +24,50 @@ window.programs = {
         name: "Andrew Notepad",
         code: function() {
             if (window.state == 0) goToDesktop();
-            createNewWindow({width:600,height:400, title: "Tiny notepad",
+            createNewWindow({
+                width: 600,
+                height: 400,
+                title: "Tiny notepad",
                 script: function(windowElement, title, content) {
-                  let write = document.createElement("textarea");
-                       content.appendChild(write);
-                       write.style.width = "569px";
-                       write.style.height = "314px";
-                       write.spellcheck = true
-                  write.placeholder = "Write...";
-                  let h5 = document.createElement("h5");
-                  content.appendChild(h5);
-                  h5.innerHTML = "Click save to save";
-                  let button = document.createElement("button");
-                  button.innerHTML = "Save";
-                  content.appendChild(button);
-                  button.onclick = function() { title.innerHTML = "Text Document - saved"; createNewWindow({width:400,height:256, title: "Your text document has been saved!", script: function(windowElement, title, content, exit) { let writeImpression = document.createElement("textarea"); content.appendChild(writeImpression); writeImpression.style.width = "360px"; writeImpression.style.height = "96px"; writeImpression.spellcheck = true; writeImpression.placeholder = "Write your impression here if you want!";  let button = document.createElement("button"); button.innerHTML = "Close"; content.appendChild(button); button.onclick = function() { exit() };}})};
-                  function end() {
-                  };
-                  return end;
-                }});
+                    let write = document.createElement("textarea");
+                    content.appendChild(write);
+                    write.style.width = "569px";
+                    write.style.height = "314px";
+                    write.spellcheck = true
+                    write.placeholder = "Write...";
+                    let h5 = document.createElement("h5");
+                    content.appendChild(h5);
+                    h5.innerHTML = "Click save to save";
+                    let button = document.createElement("button");
+                    button.innerHTML = "Save";
+                    content.appendChild(button);
+                    button.onclick = function() {
+                        title.innerHTML = "Text Document - saved";
+                        createNewWindow({
+                            width: 400,
+                            height: 256,
+                            title: "Your text document has been saved!",
+                            script: function(windowElement, title, content, exit) {
+                                let writeImpression = document.createElement("textarea");
+                                content.appendChild(writeImpression);
+                                writeImpression.style.width = "360px";
+                                writeImpression.style.height = "96px";
+                                writeImpression.spellcheck = true;
+                                writeImpression.placeholder = "Write your impression here if you want!";
+                                let button = document.createElement("button");
+                                button.innerHTML = "Close";
+                                content.appendChild(button);
+                                button.onclick = function() {
+                                    exit()
+                                };
+                            }
+                        })
+                    };
+
+                    function end() {};
+                    return end;
+                }
+            });
         },
         themeColor: "#2289c9",
     },
@@ -92,36 +117,37 @@ window.programs = {
                     input.style.backgroundColor = "transparent";
                     input.style.color = "black";
                     input.addEventListener('change', function() {
-                    
-                      var fr=new FileReader();
-                      fr.onload=function(){
-                                      createNewWindow({
-                width: 300,
-                height: 120,
-                title: "Warning",
-                script: function(windowElement, title, content, exit) {
-                    let h5 = document.createElement("h5");
-                    content.appendChild(h5);
-                    h5.innerHTML = "Please run files you trust, .exes files have access to do everything";
-                    let button = document.createElement("button");
-                    button.innerHTML = "OK";
-                    content.appendChild(button);
-                    button.style.top = "20px";
-                    button.onclick = function() {
-                        let data;
-                        eval(fr.result);
-                        data.data()
-                        exit()
-                    };
 
-                    function end() {};
-                    return end;
-                }
-            });
-                          
-                      };
-              
-                      fr.readAsText(this.files[0]);
+                        var fr = new FileReader();
+                        fr.onload = function() {
+                            createNewWindow({
+                                width: 300,
+                                height: 120,
+                                title: "Warning",
+                                script: function(windowElement, title, content, exit2) {
+                                    let h5 = document.createElement("h5");
+                                    content.appendChild(h5);
+                                    h5.innerHTML = "Please run files you trust, .exes files have access to do everything";
+                                    let button = document.createElement("button");
+                                    button.innerHTML = "OK";
+                                    content.appendChild(button);
+                                    button.style.top = "20px";
+                                    button.onclick = function() {
+                                        let data;
+                                        eval(fr.result);
+                                        data.code();
+                                        exit();
+                                        exit2();
+                                    };
+
+                                    function end() {};
+                                    return end;
+                                }
+                            });
+
+                        };
+
+                        fr.readAsText(this.files[0]);
                     })
                     content.appendChild(input);
                     let button = document.createElement("button");
