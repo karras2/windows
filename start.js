@@ -1,3 +1,4 @@
+window.state = 0;
 window.onload = function() {
     // 0: Desktop
     // 1: Store
@@ -15,6 +16,14 @@ window.onload = function() {
         },
         {
             "data": "windows.store",
+            "size": 1
+        },
+        {
+            "data": "windows.calculator",
+            "size": 1
+        },
+        {
+            "data": "winquacks.codeEditor",
             "size": 1
         },
     ]

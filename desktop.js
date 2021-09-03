@@ -3,9 +3,10 @@ document.getElementById("startButton").onclick = function() {
   document.getElementById('start').style.display = 'block';
   document.getElementById('desktop').style.display = 'none';
   window.activateStart(true);
+  window.state = 0;
 }
 let taskbarIcons = document.getElementById('icons');
-let taskbarData = []
+let taskbarData = ["windows.store"];
 for (let i = 0; i < 1; i++) {
   let icon = document.createElement("div");
   icon.classList.add("taskbarIcon");
