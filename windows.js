@@ -1,3 +1,6 @@
+import interact from 
+'https://cdn.interactjs.io/v1.10.11/interactjs/index.js'
+
 let windowPos = 0;
 window.createNewWindow = function(options) {
     function exit() {
