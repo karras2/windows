@@ -270,7 +270,7 @@ window.programs = {
                     button = document.createElement("button");
                     button.innerHTML = "Save as .exes"
                     button.onclick = function() {
-                        
+                        console.log()
                     }
                     content.appendChild(button)
 
