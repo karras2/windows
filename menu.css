@@ -216,6 +216,7 @@ h4 {
 
   /* This makes things *much* easier */
   box-sizing: border-box;
+  margin: 0px;
 }
 .close {
   clip-path: polygon(5% 0%, 0% 5%, 45% 50%, 0% 95%, 5% 100%, 50% 55%, 95% 100%, 100% 95%, 55% 50%, 100% 5%, 95% 0%, 50% 45%);

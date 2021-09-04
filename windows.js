@@ -91,7 +91,7 @@ window.createNewWindow = function(options) {
                 }
             },
             modifiers: [
-
+                
                 // minimum size
                 interact.modifiers.restrictSize({
                     min: {
