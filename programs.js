@@ -270,7 +270,16 @@ window.programs = {
                     button = document.createElement("button");
                     button.innerHTML = "Save as .exes"
                     button.onclick = function() {
-                        console.log()
+                        console.log(`
+data = {
+icon: "Questionmark",
+name: "Unknown",
+code: function() {
+${textarea.value}
+},
+themeColor: "#000000",
+}
+                        `)
                     }
                     content.appendChild(button)
 
