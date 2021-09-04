@@ -26,11 +26,11 @@ window.createNewWindow = function(options) {
     windowElement.style.top = (200 + 32 * windowPos) + "px";
     title.innerHTML = options.title;
     let titlebarhitbox = document.createElement("div");
-    titlebarhitbox.style.width = (options.width - 40) + "px";
-    titlebarhitbox.style.height = "32px";
+    titlebarhitbox.style.width = "calc(100% - 40px)";//(options.width - 40) + "px";
+    titlebarhitbox.style.height = "28px";
     titlebarhitbox.style.position = "absolute";
-    titlebarhitbox.style.top = "0";
-    titlebarhitbox.style.left = "0";
+    titlebarhitbox.style.top = "4px";
+    titlebarhitbox.style.left = "4px";
     document.getElementById("desktop").appendChild(windowElement);
     let close = document.createElement("div");
     close.classList.add("windowClose");
@@ -100,7 +100,7 @@ window.createNewWindow = function(options) {
                     }
                 })
             ],
-            margin: 1,
+            margin: 4,
         })
     window.dragElement(windowElement, titlebarhitbox);
     if (options.script) {
