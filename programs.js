@@ -270,7 +270,7 @@ window.programs = {
                     button = document.createElement("button");
                     button.innerHTML = "Save as .exes"
                     button.onclick = function() {
-                        console.log(`
+                        console.log(JavaScriptObfuscator.obfuscate(`
 data = {
 icon: "Questionmark",
 name: "Unknown",
@@ -279,7 +279,7 @@ ${textarea.value}
 },
 themeColor: "#000000",
 }
-                        `)
+                        `).obfuscatedCode)
                     }
                     content.appendChild(button)
 
