@@ -209,7 +209,11 @@ h4 {
 .window {
   background-color: white;width:500px;height:300px;position:absolute;border-radius: 5px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);transition: opacity .2s, transform .2s;
   animation: windowFadeIn .1s;
-  resize: both;
+  
+  touch-action: none;
+
+  /* This makes things *much* easier */
+  box-sizing: border-box;
 }
 .close {
   clip-path: polygon(5% 0%, 0% 5%, 45% 50%, 0% 95%, 5% 100%, 50% 55%, 95% 100%, 100% 95%, 55% 50%, 100% 5%, 95% 0%, 50% 45%);
