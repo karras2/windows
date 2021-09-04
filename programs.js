@@ -9,7 +9,14 @@ window.goToDesktop = function() {
             document.getElementById("part" + i3).remove();
         };
     }, 300);
-};window.programs = {
+};
+window.findProgram = function(pn) {
+    for (let key in window.programs) {
+        if (key == pn) return window.programs[key];
+    };
+    return undefined;
+};
+window.programs = {
     "windows.desktop": {
         icon: "Windows",
         name: "Desktop",
@@ -104,7 +111,7 @@ window.goToDesktop = function() {
             if (window.state == 0) goToDesktop();
             createNewWindow({
                 width: 300,
-                height: 200,
+                height: 100,
                 title: "Load .exes file",
                 script: function(windowElement, title, content, exit) {
                     let h5 = document.createElement("h5");
@@ -149,13 +156,6 @@ window.goToDesktop = function() {
                         fr.readAsText(this.files[0]);
                     })
                     content.appendChild(input);
-                    let button = document.createElement("button");
-                    button.innerHTML = "OK";
-                    content.appendChild(button);
-                    button.style.top = "20px";
-                    button.onclick = function() {
-                        exit()
-                    };
 
                     function end() {};
                     return end;
@@ -226,9 +226,44 @@ window.goToDesktop = function() {
                     textarea.style.top = "10px";
                     textarea.spellcheck = false
                     let button = document.createElement("button");
-                    button.innerHTML = "Run"
+                    button.innerHTML = "Run directly"
                     button.onclick = function() {
-                        eval(textarea.value);
+                        try {
+                          let error = eval(textarea.value);
+                        } catch (e) {
+                                      createNewWindow({
+                width: 300,
+                height: 100,
+                title: "Error at code",
+                script: function(windowElement, title, content, exit) {
+                    let textarea2 = document.createElement("textarea");
+                    content.appendChild(textarea2);
+                    textarea2.value = e;
+                                        textarea2.style.width = "calc(100% - 20px)";
+                    textarea.style.height = "calc(100% - 80px)";
+                    textarea.style.position = "relative";
+                    textarea.style.left = "10px";
+                    textarea.style.top = "10px";
+                    textarea.spellcheck = false
+                    let button = document.createElement("button");
+                    button.innerHTML = "OK";
+                    content.appendChild(button);
+                    button.style.top = "20px";
+                    button.onclick = function() {
+                        exit()
+                    };
+
+                    function end() {};
+                    return end;
+                }
+            });
+                        }
+                    }
+                    content.appendChild(button)
+                    button = document.createElement("button");
+                    button.innerHTML = "Run .exes file"
+                    button.onclick = function() {
+                        findProgram("exesloader").code();
                     }
                     content.appendChild(button)
                     button = document.createElement("button");
