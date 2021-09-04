@@ -1,3 +1,4 @@
+const experienceVersion = 5;
 window.goToDesktop = function() {
     window.state = 1;
     window.activateStart(false);
