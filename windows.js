@@ -60,6 +60,7 @@ window.createNewWindow = function(options) {
     windowElement.appendChild(titlebarhitbox);
     windowElement.appendChild(content);
     close.appendChild(closeIcon);
+    if (options.resize) {
     interact(windowElement)
         .resizable({
             edges: {
@@ -102,6 +103,7 @@ window.createNewWindow = function(options) {
             ],
             margin: 4,
         })
+    };
     window.dragElement(windowElement, titlebarhitbox);
     if (options.script) {
         end = options.script(windowElement, title, content, exit);

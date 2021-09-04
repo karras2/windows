@@ -9,8 +9,7 @@ window.goToDesktop = function() {
             document.getElementById("part" + i3).remove();
         };
     }, 300);
-};
-window.programs = {
+};window.programs = {
     "windows.desktop": {
         icon: "Windows",
         name: "Desktop",
@@ -208,23 +207,34 @@ window.programs = {
     },
     "winquacks.codeEditor": {
         icon: "Notepad",
-        name: "Code Editor",
+        name: "Program Creator",
         code: function() {
             if (window.state == 0) goToDesktop();
             createNewWindow({
                 width: 800,
                 height: 700,
-                title: "Text/Code Editor",
+                resize: true,
+                title: "Program Editor",
                 script: function(windowElement, title, content) {
+                    
                     let textarea = document.createElement("textarea");
                     content.appendChild(textarea);
-                    textarea.style.width = "760px";
-                    textarea.style.height = "650px";
+                    textarea.style.width = "calc(100% - 20px)";
+                    textarea.style.height = "calc(100% - 80px)";
+                    textarea.style.position = "relative";
+                    textarea.style.left = "10px";
+                    textarea.style.top = "10px";
                     textarea.spellcheck = false
                     let button = document.createElement("button");
                     button.innerHTML = "Run"
                     button.onclick = function() {
                         eval(textarea.value);
+                    }
+                    content.appendChild(button)
+                    button = document.createElement("button");
+                    button.innerHTML = "Save as .exes"
+                    button.onclick = function() {
+                        
                     }
                     content.appendChild(button)
 
