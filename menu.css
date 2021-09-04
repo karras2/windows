@@ -176,6 +176,7 @@ h4 {
   top: calc(100% - 40px);
   left: 0;
   background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
 }
 .taskbarIcon {
   width: 60px;
@@ -207,7 +208,8 @@ h4 {
   background-color: #f76d82;
 }
 .window {
-  background-color: white;width:500px;height:300px;position:absolute;border-radius: 5px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);transition: opacity .2s;
+  background-color: rgba(255, 255, 255, 0.8);width:500px;height:300px;position:absolute;border-radius: 5px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);transition: opacity .2s;
+  backdrop-filter: blur(5px);
   animation: windowFadeIn .1s;
   
   touch-action: none;
