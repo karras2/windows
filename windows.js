@@ -4,15 +4,8 @@ let windowPos = 0;
 window.createNewWindow = function(options) {
     function exit() {
         windowElement.style.opacity = 0;
-        if (windowElement.style.transform == "") {
-          windowElement.style.transform = 'scale(0.9)';
-          console.log(windowElement.style.transform);
-        } else {
-          let a = windowElement.style.transform;
-          windowElement.style.transform += ", scale(0.9)";
-          console.log(windowElement.style.transform, a);
-        };
-        windowElement.style.transition = "opacity .2s, scale .2s";
+        windowElement.style.transform += "scale(0.9)";
+        windowElement.style.transition = "opacity .2s, transition .2s";
         setTimeout(function() {
             windowElement.remove()
         }, 200);
