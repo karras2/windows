@@ -100,6 +100,7 @@ window.createNewWindow = function(options) {
                     }
                 })
             ],
+            margin: 1,
         })
     window.dragElement(windowElement, titlebarhitbox);
     if (options.script) {
