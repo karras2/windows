@@ -233,18 +233,19 @@ window.programs = {
                         } catch (e) {
                                       createNewWindow({
                 width: 300,
-                height: 100,
+                height: 300,
+                resize: true,
                 title: "Error at code",
                 script: function(windowElement, title, content, exit) {
                     let textarea2 = document.createElement("textarea");
                     content.appendChild(textarea2);
                     textarea2.value = e;
-                                        textarea2.style.width = "calc(100% - 20px)";
-                    textarea.style.height = "calc(100% - 80px)";
-                    textarea.style.position = "relative";
-                    textarea.style.left = "10px";
-                    textarea.style.top = "10px";
-                    textarea.spellcheck = false
+                    textarea2.style.width = "calc(100% - 20px)";
+                    textarea2.style.height = "calc(100% - 80px)";
+                    textarea2.style.position = "relative";
+                    textarea2.style.left = "10px";
+                    textarea2.style.top = "10px";
+                    textarea2.spellcheck = false
                     let button = document.createElement("button");
                     button.innerHTML = "OK";
                     content.appendChild(button);
