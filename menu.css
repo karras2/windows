@@ -207,7 +207,7 @@ h4 {
   background-color: #f76d82;
 }
 .window {
-  background-color: white;width:500px;height:300px;position:absolute;border-radius: 5px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);transition: opacity .2s, transform .2s;
+  background-color: white;width:500px;height:300px;position:absolute;border-radius: 5px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);transition: opacity .2s;
   animation: windowFadeIn .1s;
   
   touch-action: none;
